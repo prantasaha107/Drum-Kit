@@ -43,6 +43,7 @@ function handleClick(){
         sound.play();
 
     }
+    buttonAnimation(this.value)
      
 
    
@@ -85,6 +86,7 @@ function handleKey(event){
         sound.play();
 
     }
+    buttonAnimation(event.key)
      
 
    
@@ -95,4 +97,16 @@ function handleKey(event){
 document.addEventListener('keydown',(event)=>{
     handleKey(event)
 })
+//Animation
+function buttonAnimation(currentkey){
+   let activeButton= document.querySelector("."+currentkey);
+   activeButton.classList.add("pressed");
 
+   setTimeout(function(){
+    activeButton.classList.remove("pressed");
+
+   },100)
+
+
+
+}
